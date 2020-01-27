@@ -1,0 +1,6 @@
+{
+    "presets" : [
+        "@babel/preset-env", /*Permite trabajar con los entornos y react*/
+        "@babel/preset-react"
+    ]
+}
