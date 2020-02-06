@@ -1,0 +1,10 @@
+:host{ // este componente hace referencia al <app-product> del html para no crear un div
+    margin: 2px;
+    border-radius: 5px;
+    border:1px solid black;
+    display: block; //para que el elemento sea dinamico
+}
+
+img{
+    max-width: 100%;
+}
