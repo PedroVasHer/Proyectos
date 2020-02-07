@@ -1,4 +1,6 @@
-<h3>{{product.title}}</h3>    
+<h3 appHighlight>{{product.title | uppercase}}</h3>    
 <img [src]="product.image" alt="">
-<strong>{{product.price}}</strong>
+<strong>{{product.price | currency}}</strong><!--pone un signo de pesos-->
+<p>{{product.description | slice:0:10}}</p> <!--Slice corta el texto donde se le indique en 20 caracteres en este caso-->
+<p>{{today | date:'medium'}}</p><!--En la documentacion se muestra todo lo del pipe fecha -->
 <button (click)=addCar()>Añadir al carrito</button><!--Esto seria la salida del componente que llama el metodo-->

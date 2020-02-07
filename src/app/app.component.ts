@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'proyectoNuevo';
   items2 = ['Pedro', 'Vásquez', 'Hernández'];
 
+  power = 10;
+
   products: Product[] = [ // de esta manera se asocia el modelo o la interfaz al array de producto
     {
       id: '1',

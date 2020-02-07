@@ -5,11 +5,17 @@ import {FormsModule} from '@angular/forms'; // Para hacer el enlace de datos
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent} from './components/product.component';
+import { NuevoComponenteComponent } from './nuevo-componente/nuevo-componente.component';
+import { ExponentialPipe } from './exponential.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent // se debe incluir para que angular reconozca el componente
+    ProductComponent,
+    NuevoComponenteComponent,
+    ExponentialPipe,
+    HighlightDirective // se debe incluir para que angular reconozca el componente
   ],
   imports: [
     BrowserModule,

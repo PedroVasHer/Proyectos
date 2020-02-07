@@ -19,6 +19,7 @@ import { Product } from '../product.model';
 export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     @Input() product: Product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter(); // la salida emite cualquier valor al componente padre
+    today = new Date();
     // tener en cuenta que se debe inicializar eventEmitter
 
     constructor() {
