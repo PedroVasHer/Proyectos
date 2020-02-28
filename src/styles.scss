@@ -1,17 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    margin: 0;
-    padding: 0;
-}
-
+// body{
+//     margin: 0;
+//     padding: 0;
+// }
+// este body sobra por la implementacion de angular material
 .product-grid{
     display: grid;
     grid-template-columns: repeat(1,1fr); // se pone de a 1 para implementar el responsive primero con mobile
 }
 
-@media (min-width: 576px){ // el tamaño minimo de la pantalla
+@media (min-width: 576px){ // el tamaño minimo de la pantalla, a partir de 576px empiezan a aparecer de a 3 elementos
+// en la grilla
     .product-grid{
         display: grid;
-        grid-template-columns: repeat(4,1fr); // se pone de a 1 para implementar el responsive primero con mobile
+        grid-template-columns: repeat(3,1fr); 
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

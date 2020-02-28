@@ -10,7 +10,7 @@ import {
     } from '@angular/core';
 // los decoradores le dicen a l componente que va a ser, si un servicio
 // si un componente, etc. Estos se nombran @y el nombre del decorador antes de la clase
-import { Product } from '../product.model';
+import { Product } from '../../../product.model';
 @Component({
     selector : 'app-product', // hace referencia al nombre que tendra y como se llamara en el codigo html principal
     templateUrl: './product.component.html', // hace referencia al codigo html que tendra

@@ -4,35 +4,29 @@ import {FormsModule} from '@angular/forms'; // Para hacer el enlace de datos
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent} from './components/product.component';
-import { ExponentialPipe } from './exponential.pipe';
-import { HighlightDirective } from './highlight.directive';
-import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BannerComponent } from './banner/banner.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LayoutComponent } from './layout/layout.component';
+import {SharedModule} from './shared/shared.module';
+import {DemoComponent} from './demo/demo.component';
+import {CoreModule} from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    ExponentialPipe,
-    HighlightDirective,
-    HomeComponent,
-    ProductsComponent,
-    ContactComponent,
     DemoComponent,
-    HeaderComponent,
-    FooterComponent,
-    BannerComponent // se debe incluir para que angular reconozca el componente
+    ContactComponent,
+    PageNotFoundComponent,
+    LayoutComponent // se debe incluir para que angular reconozca el componente
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule // se debe adicionar para que tengas una consecuencia
+    SharedModule,
+    CoreModule,
+    FormsModule,
+    BrowserAnimationsModule // se debe adicionar para que tengas una consecuencia
   ],
   providers: [],
   bootstrap: [AppComponent]
