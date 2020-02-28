@@ -1,7 +1,24 @@
-<h3 appHighlight>{{product.title | uppercase}}</h3>    
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{product.title | uppercase}}</mat-card-title>
+        <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <img [src]="product.image" alt="">
+    </div>
+    <mat-card-content>
+        <p>{{product.description | slice:0:10}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button [routerLink]= "['/products',product.id]">Ver detalle</a>
+        <button (click)="addCar()"  mat-raised-button color = "primary">Añadir al carrito</button><!--Esto seria la salida del componente que llama el metodo-->
+    </mat-card-actions>
+</mat-card>
+
+<!-- <h3 appHighlight>{{product.title | uppercase}}</h3>    
 <img [src]="product.image" alt="">
-<strong>{{product.price | currency}}</strong><!--pone un signo de pesos-->
-<p>{{product.description | slice:0:10}}</p> <!--Slice corta el texto donde se le indique en 20 caracteres en este caso-->
-<p>{{today | date:'medium'}}</p><!--En la documentacion se muestra todo lo del pipe fecha -->
-<button (click)="addCar()"  mat-raised-button color = "primary">Añadir al carrito</button><!--Esto seria la salida del componente que llama el metodo-->
-<a [routerLink]= "['/products',product.id]">Ver detalle</a>
+<strong>{{product.price | currency}}</strong>pone un signo de pesos
+<p>{{product.description | slice:0:10}}</p> Slice corta el texto donde se le indique en 20 caracteres en este caso
+<p>{{today | date:'medium'}}</p>En la documentacion se muestra todo lo del pipe fecha
+<button (click)="addCar()"  mat-raised-button color = "primary">Añadir al carrito</button>Esto seria la salida del componente que llama el metodo
+<a [routerLink]= "['/products',product.id]">Ver detalle</a> -->

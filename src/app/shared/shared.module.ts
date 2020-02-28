@@ -5,6 +5,7 @@ import { ExponentialPipe } from './pipes/exponentials/exponential.pipe';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MaterialModule } from './../material/material.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   exports: [ // esto le dice a los pipe y directivas que se cran en shared que tambien pueden ser usados
     // por otros componentes

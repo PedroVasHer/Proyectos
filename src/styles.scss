@@ -7,6 +7,15 @@
 .product-grid{
     display: grid;
     grid-template-columns: repeat(1,1fr); // se pone de a 1 para implementar el responsive primero con mobile
+    grid-gap: 50px 20px; //espacio entre cada grilla
+}
+
+.container{
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 @media (min-width: 576px){ // el tamaño minimo de la pantalla, a partir de 576px empiezan a aparecer de a 3 elementos
@@ -15,6 +24,16 @@
         display: grid;
         grid-template-columns: repeat(3,1fr); 
     }
+    .container{
+        max-width: 1110px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+     height: 100%;
+ }
+
+body {
+     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+ }

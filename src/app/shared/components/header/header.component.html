@@ -1,8 +1,26 @@
-<nav> <!--Sirve para hacer barras de navegacion-->
+<mat-toolbar color = "primary">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row"><!--row between-xs middle-xs
+        hace parte de la libreria flexbox que se incorporo a angular.json
+        row between-xs (conserva el mismo espacio entre los componentes) middle-xs
+        (esta el mismo espacio arriba y abajo) header-row es la clase que se utiliza er el css-->
+            <nav>
+                <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+                <a mat-button routerLink="/products" routerLinkActive="active">Productos</a> 
+                <a mat-button routerLink="/contact" routerLinkActive="active">Contactos</a>
+            </nav>    
+            <a mat-raised-button matBadge = "4" matBadgeColor = "warn">
+                <mat-icon>add_shopping_cart</mat-icon> 
+                Carrito
+            </a>   
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<!-- <nav> Sirve para hacer barras de navegacion
     <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/products" routerLinkActive="active">Productos</a> <!--con el routerLink ejecuta un single page para que no tenga que
+    <a routerLink="/products" routerLinkActive="active">Productos</a> con el routerLink ejecuta un single page para que no tenga que
     recargar toda la pagina sino solo lo que necesitamos
     routerLinkActive="active" lo que hace es poner estilos solo y solo si, ese link esta activo, 
-    se debe hacer un cambio en el scss-->
+    se debe hacer un cambio en el scss
     <a routerLink="/contact" routerLinkActive="active">Contactos</a>
-</nav>
+</nav> -->
