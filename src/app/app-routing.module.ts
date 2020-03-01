@@ -40,6 +40,11 @@ const routes: Routes = [
     component: DemoComponent
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  { // Este path siempre debe de ir al final porque si va en el principio o antes de otro, los que esten+
+    // después de él, los toma como 404
     path: '**', // cuando no hace match con nada, cuando el usaurio se equivoca en el path
     component: PageNotFoundComponent
   }

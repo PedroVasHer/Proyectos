@@ -14,11 +14,19 @@ export class ProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
-    this.products = this.productsService.getAllProducts();
+   // this.products = this.productsService.getAllProducts();
+   this.fetchProduct(); // onInit es la mejor manera de llamar metodos
   }
 
   clickProduct(id: number) {
     console.log('product');
     console.log(id);
+  }
+
+  fetchProduct() {
+    this.productsService.getAllProducts()
+    .subscribe(products => { // el metodo subscribe es el que trae los metodos porque el servicio es un observable 
+      this.products = products;
+    });
   }
 }
