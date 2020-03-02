@@ -1,9 +1,39 @@
-nav > a{ //cualquier elemento a que este dentro del nav
-    padding: 5px;
-    text-decoration: none; //ningun underline
-}
+// nav > a{ //cualquier elemento a que este dentro del nav
+//     padding: 5px;
+//     text-decoration: none; //ningun underline
+// }
 // nav > a.active{ //cualquier elemento a que este dentro del nav
 //     background-color: blue;
 //     padding: 5px;
 //     text-decoration: none; //ningun underline
 // }
+
+@import '~@angular/material/theming';
+
+$primary: mat-palette($mat-indigo);
+
+footer {
+  padding: 50px 0px;
+  margin-top: 20px;
+  background-color: mat-color($primary);
+  .box {
+    h3 {
+      color: white;
+    }
+    input{
+      color: white;
+    }
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      li {
+        margin: 10px 0px;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,51 @@
-<mat-toolbar color = "primary">
-    <mat-toolbar-row>
-        <div class="row between-xs middle-xs header-row">
-            <nav>
-                <a mat-button>Llamanos</a>
-                <a mat-button>Acerca de</a> 
-                <a mat-button>Información</a>
-            </nav>    
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <div class="box">
+            <h3>Productos</h3>
+            <ul>
+              <li>
+                <a routerLink="/products" [queryParams]="{ type: 'news' }"
+                  >Nuevos Productos</a
+                >
+              </li>
+              <li>
+                <a routerLink="/products" [queryParams]="{ type: 'offer' }"
+                  >En oferta</a
+                >
+              </li>
+              <li>
+                <a routerLink="/products" [queryParams]="{ type: 'latest' }"
+                  >Últimos productos</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-    </mat-toolbar-row>
-</mat-toolbar>
+        <div class="col-xs-12 col-md-4">
+          <div class="box">
+            <h3>Acerca de PlatziStore</h3>
+            <ul>
+              <li><a routerLink="/about-us">Sobre nosotros</a></li>
+              <li><a routerLink="/stores">Nuestras tiendas</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="box">
+            <h3>Contacto</h3>
+            <mat-form-field color="accent" class="full-width">
+                <input matInput [formControl]="emailField" matInput placeholder="Su correo" type="email"> <!--El formControl es una directiva que le dice
+                al input que va a ser un input reactivo-->
+                <!--  {{emailField.valid}}, {{emailField.invalid}}  valida si las condiciones del input se cumplen o no -->
+                <!-- <button mat-raised-button *ngIf="emailField.valid" (click)="sendEmail()">Enviar</button> -->
+                <button mat-raised-button [disabled]="emailField.invalid" (click)="sendEmail()">Enviar</button> <!--Otra manera
+                de hacerlo es diciendo que desabilite el boton si el campo es invalido-->
+            </mat-form-field>
+                <!-- <button (click)="registerMail()" [disabled]="emailInput.invalid" mat-raised-button color="accent">Suscribirse</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>

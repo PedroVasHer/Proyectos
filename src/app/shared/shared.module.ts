@@ -6,6 +6,7 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from './../material/material.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -13,19 +14,22 @@ import { MaterialModule } from './../material/material.module';
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
+
   ],
   exports: [ // esto le dice a los pipe y directivas que se cran en shared que tambien pueden ser usados
     // por otros componentes
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ]
 })
 export class SharedModule { }

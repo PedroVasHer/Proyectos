@@ -9,6 +9,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { TableComponent } from './components/table/table.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { FormsProductsComponent } from './components/forms-products/forms-products.component';
  // import { MatInputModule } from '@angular/material/input';
 // import { MatButtonModule } from '@angular/material/button';
 // import { MatSelectModule } from '@angular/material/select';
@@ -19,7 +20,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, TableComponent, DashboardComponent, ProductsListComponent],
+  declarations: [ProductFormComponent, NavComponent, TableComponent, DashboardComponent, ProductsListComponent, FormsProductsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
