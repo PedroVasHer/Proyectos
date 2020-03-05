@@ -23,6 +23,13 @@
                     <mat-form-field>
                         <input placeholder="Price" formControlName='price' matInput type="number">
                     </mat-form-field>
+                    <div *ngIf = "priceField.errors && form.get('price').dirty"> <!--Pregunta si hay errores y si el usuario ya empezo a ingresar valores-->
+                        <p *ngIf="priceField.hasError('price_invalid')">No debes pasarte de 10000 </p><!--
+                            se accede a toda el formulario por el grupo form.get('price') obteniendo solo el precio y se pregunta si hubo un error
+                            .hasError() esto recibe el tipo de validacion que se preguntas
+                        -->
+                        <p *ngIf="priceField.hasError('required')">El campo es requerido </p>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -34,7 +41,8 @@
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button type="submit">Guardar</button>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button><!--form.invalid pregunta si todo el formulario
+            es valido-->
         </mat-card-actions>
     </mat-card>    
 </form>

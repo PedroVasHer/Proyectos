@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validator, Validators} from '@angular/forms';
 // FormBuilder: sirve para crear el grupo rapidamente
 import {ProductsService} from './../../../core/service/products/products.service';
 import {Router} from '@angular/router';
+import {MyValidators} from './../../../utils/validation';
 @Component({
   selector: 'app-forms-products',
   templateUrl: './forms-products.component.html',
@@ -23,13 +24,15 @@ export class FormsProductsComponent implements OnInit {
   }
 
   saveProduct(event: Event) {
-    event.preventDefault(); // evita que la pagina se recargue cuando se guarda
+    event.preventDefault(); // evita que la pagina se recargue cuando se guarda, eso es un comporttamiento que hace por defecto
+    // esta instruccion hace que omita esto y haga su accion
     if (this.form.valid) {
       const product = this.form.value;
       this.productsService.createProduct(product)
       .subscribe(newProduct => {
         console.log(newProduct);
-        this.router.navigate(['./admin/products']); // permite direccionar a otra ruta que se le especifique, en este caso la lista de productos
+        this.router.navigate(['./admin/products']); // permite direccionar a otra ruta que se le especifique, 
+        // en este caso la lista de productos
       });
     }
     // console.log(this.form.value);
@@ -38,9 +41,14 @@ export class FormsProductsComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
-      price: [, [Validators.required]],
+      price: [, [Validators.required, MyValidators.isPriceValid]],
       image: [''],
       description: ['', [Validators.required]]
     });
+  }
+
+  get priceField() { // Esto permite llamar una variable y no tener que repetir form.get('price')
+  // esto es buena practica para no cambiar en todo el html la variable.
+    return this.form.get('price');
   }
 }
