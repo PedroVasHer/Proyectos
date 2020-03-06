@@ -11,6 +11,7 @@ import {
 // los decoradores le dicen a l componente que va a ser, si un servicio
 // si un componente, etc. Estos se nombran @y el nombre del decorador antes de la clase
 import { Product } from '../../../product.model';
+import {CartService} from './../../../core/service/cart.service';
 @Component({
     selector : 'app-product', // hace referencia al nombre que tendra y como se llamara en el codigo html principal
     templateUrl: './product.component.html', // hace referencia al codigo html que tendra
@@ -22,7 +23,9 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     today = new Date();
     // tener en cuenta que se debe inicializar eventEmitter
 
-    constructor() {
+    constructor(
+      private cartService: CartService
+    ) {
       console.log('1. Constructor'); // llamaria 6 veces al contructor porque hay 6 elementos
     }
 
@@ -40,6 +43,7 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     }
     addCar() {
       console.log('Añadir al carrito');
-      this.productClicked.emit(this.product.id);
+      // this.productClicked.emit(this.product.id);
+      this.cartService.addCart(this.product);
     }
 }

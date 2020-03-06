@@ -9,7 +9,8 @@
                 <a mat-button routerLink="/products" routerLinkActive="active">Productos</a> 
                 <a mat-button routerLink="/contact" routerLinkActive="active">Contactos</a>
             </nav>    
-            <a mat-raised-button matBadge = "4" matBadgeColor = "warn">
+            <a mat-raised-button [matBadge] = "total$ | async" matBadgeColor = "warn">
+                <!--"total$ | async hace que se susbcriba y cuando ya no se utilice se desusbcribe para evitar gastos en memoria-->
                 <mat-icon>add_shopping_cart</mat-icon> 
                 Carrito
             </a>   

@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit)='saveProduct($event)'> <!--$event: sirve para capturar el evento y evitar que la pagina se recargue-->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Product</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Title" formControlName='title' matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Price" formControlName='price' matInput type="number">
+                    </mat-form-field>
+                    <div *ngIf = "priceField.errors && form.get('price').dirty"> <!--Pregunta si hay errores y si el usuario ya empezo a ingresar valores-->
+                        <p *ngIf="priceField.hasError('price_invalid')">No debes pasarte de 10000 </p><!--
+                            se accede a toda el formulario por el grupo form.get('price') obteniendo solo el precio y se pregunta si hubo un error
+                            .hasError() esto recibe el tipo de validacion que se preguntas
+                        -->
+                        <p *ngIf="priceField.hasError('required')">El campo es requerido </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">         
+                    <mat-form-field>
+                        <textarea formControlName='description'  placeholder="Description" matInput></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button><!--form.invalid pregunta si todo el formulario
+            es valido-->
+        </mat-card-actions>
+    </mat-card>    
+</form>
