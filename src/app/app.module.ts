@@ -20,6 +20,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {environment} from './../environments/environment';
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {environment} from './../environments/environment';
     HttpClientModule, // con esto la apliucaciones tiene la facilidad de hacer peticiones http
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

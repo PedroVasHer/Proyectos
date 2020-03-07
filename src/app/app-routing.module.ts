@@ -30,7 +30,7 @@ const routes: Routes = [
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],
+        // canActivate: [AdminGuard],
         component: ContactComponent
       },
       {
@@ -45,7 +45,12 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canActivate: [AdminGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   { // Este path siempre debe de ir al final porque si va en el principio o antes de otro, los que esten+
     // después de él, los toma como 404
