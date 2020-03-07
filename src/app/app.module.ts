@@ -16,6 +16,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import {environment} from './../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule, // se debe adicionar para que tengas una consecuencia
-    HttpClientModule // con esto la apliucaciones tiene la facilidad de hacer peticiones http
+    HttpClientModule, // con esto la apliucaciones tiene la facilidad de hacer peticiones http
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
